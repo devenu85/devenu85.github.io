@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers' Day Invitation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ff6f61, #d4a5a5, #6b5b95); /* Vibrant Gradient */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 100%;
+            max-width: 500px; /* Adjusted max width */
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            background: linear-gradient(to right, #ff007f, #ff6f61, #ff4500); /* Vibrant gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em; /* Increased font size for more prominence */
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); /* Strong shadow for enhanced effect */
+            padding: 10px;
+            letter-spacing: 2px; /* Increased letter spacing for better readability */
+        }
+
+        h2 {
+            color: #007bff; /* Uniform color for all h2 headings */
+            font-size: 1.3em; /* Reduced font size */
+            margin: 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent; /* Remove underline */
+        }
+
+        .countdown h2 {
+            display: inline; /* Display as inline to remove the underline effect */
+            padding-bottom: 0; /* Ensure no padding below the text */
+        }
+
+        p {
+            font-size: 0.9em; /* Reduced font size */
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .event-details, .countdown, .special-message, .techie-humor {
+            margin: 15px 0;
+        }
+
+        .countdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px; /* Reduced gap */
+            margin: 15px 0;
+        }
+
+        #timer {
+            font-size: 1.1em; /* Slightly larger font size */
+            font-weight: bold;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px; /* Adjusted padding */
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .special-message {
+            font-size: 1.1em; /* Reduced font size */
+            font-weight: bold;
+            color: #28a745; /* Attractive green color */
+            background: #e9f7ef; /* Light green background */
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #28a745; /* Matching border */
+            text-align: center;
+        }
+
+        .techie-humor {
+            font-size: 1em; /* Reduced font size */
+            color: #dc3545; /* Techie Humor color */
+        }
+
+        .special-message span {
+            font-size: 1.2em; /* Slightly larger emoji size */
+        }
+
+        .event-details p {
+            font-size: 1em; /* Normal font size for event details */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Space between text and emojis */
+        }
+
+        .event-details p span {
+            font-size: 1.2em; /* Larger emoji size */
+        }
+
+        @media (min-width: 768px) {
+            .countdown {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy Teacher's Day!</h1>
+            <p>We warmly invite you to celebrate with us. 🎉</p>
+        </header>
+
+        <section class="event-details">
+            <h2>Event Details</h2>
+            <p><span>📅</span><strong>Date:</strong> September 5th, 2024</p>
+            <p><span>⏰</span><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+            <p><span>📍</span><strong>Venue:</strong> Pharmacy Bhavan - 705</p>
+        </section>
+
+        <section class="countdown">
+            <h2>Countdown to Event:</h2>
+            <div id="timer">
+                <span id="days"></span> Days 
+                <span id="hours"></span> Hours 
+                <span id="minutes"></span> Minutes 
+                <span id="seconds"></span> Seconds
+            </div>
+        </section>
+
+        <section class="special-message">
+            <h2>🎓 A Special Message for You 📚</h2>
+            <p>Dear Teachers, your dedication and hard work inspire us every day. We are thrilled to celebrate this special occasion with you. Thank you for everything you do! 🌟</p>
+        </section>
+
+        <section class="techie-humor">
+            <h2>Techie Humor:</h2>
+            <p>Why do programmers prefer dark mode? Because light attracts bugs! 💻</p>
+        </section>
+    </div>
+    <script>
+        // Countdown Timer
+        const eventDate = new Date("September 5, 2024 10:00:00").getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("timer").innerText = "The event has started!";
+            }
+        };
+
+        const countdown = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
