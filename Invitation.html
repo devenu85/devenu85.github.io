@@ -20,12 +20,12 @@
 
         .container {
             background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-            padding: 15px;
+            padding: 10px; /* Reduced padding */
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             max-width: 90%;
             width: 100%;
-            max-width: 500px; /* Adjusted max width */
+            max-width: 400px; /* Reduced max width */
             text-align: center;
             animation: fadeIn 1.5s ease-in-out;
         }
@@ -35,42 +35,32 @@
             to { opacity: 1; }
         }
 
-        header {
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            background: linear-gradient(to right, #ff007f, #ff6f61, #ff4500); /* Vibrant gradient */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2.5em; /* Increased font size for more prominence */
+        h4 {
+            color: #333; /* Default color for the main heading */
+            font-size: 1.5em; /* Adjusted font size */
             margin: 0;
             font-weight: bold;
-            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); /* Strong shadow for enhanced effect */
+            text-shadow: 0 0 0; /* Remove shadow */
             padding: 10px;
-            letter-spacing: 2px; /* Increased letter spacing for better readability */
+            letter-spacing: 1px; /* Reduced letter spacing */
         }
 
         h2 {
-            color: #007bff; /* Uniform color for all h2 headings */
-            font-size: 1.3em; /* Reduced font size */
-            margin: 15px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid transparent; /* Remove underline */
-        }
-
-        .countdown h2 {
-            display: inline; /* Display as inline to remove the underline effect */
-            padding-bottom: 0; /* Ensure no padding below the text */
+            color: #333; /* Default color for other headings */
+            font-size: 1.4em; /* Adjusted font size for better responsiveness */
+            margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 0 0 0; /* Remove shadow */
+            padding: 5px;
         }
 
         p {
-            font-size: 0.9em; /* Reduced font size */
+            font-size: 0.8em; /* Reduced font size */
             margin: 8px 0;
             color: #555;
         }
 
-        .event-details, .countdown, .special-message, .techie-humor {
+        .event-details, .countdown, .special-message, footer {
             margin: 15px 0;
         }
 
@@ -79,63 +69,50 @@
             flex-direction: column;
             align-items: center;
             gap: 5px; /* Reduced gap */
-            margin: 15px 0;
         }
 
         #timer {
-            font-size: 1.1em; /* Slightly larger font size */
+            font-size: 0.9em; /* Adjusted font size */
             font-weight: bold;
             background: #007bff;
             color: white;
-            padding: 10px 15px; /* Adjusted padding */
+            padding: 8px 12px; /* Adjusted padding */
             border-radius: 6px;
             display: inline-block;
         }
 
         .special-message {
-            font-size: 1.1em; /* Reduced font size */
+            font-size: 0.9em; /* Adjusted font size */
             font-weight: bold;
             color: #28a745; /* Attractive green color */
             background: #e9f7ef; /* Light green background */
-            padding: 12px;
+            padding: 10px;
             border-radius: 8px;
             border: 2px solid #28a745; /* Matching border */
             text-align: center;
         }
 
-        .techie-humor {
-            font-size: 1em; /* Reduced font size */
-            color: #dc3545; /* Techie Humor color */
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 20px 0; /* Space around the line */
         }
 
-        .special-message span {
-            font-size: 1.2em; /* Slightly larger emoji size */
+        footer p {
+            font-style: italic; /* Italicize the footer text */
         }
 
-        .event-details p {
-            font-size: 1em; /* Normal font size for event details */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px; /* Space between text and emojis */
-        }
-
-        .event-details p span {
-            font-size: 1.2em; /* Larger emoji size */
-        }
-
-        @media (min-width: 768px) {
-            .countdown {
-                flex-direction: row;
-            }
+        .italic-text {
+            font-style: italic; /* Italicize the specific text */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Happy Teacher's Day!</h1>
-            <p>We warmly invite you to celebrate with us. 🎉</p>
+            <h4>🎉 Happy Teacher's Day! 🎉</h4>
+            <p class="italic-text">We are delighted to invite you to join us in celebrating this special day! Your presence will make our event truly memorable. 🌟</p>
         </header>
 
         <section class="event-details">
@@ -157,13 +134,15 @@
 
         <section class="special-message">
             <h2>🎓 A Special Message for You 📚</h2>
-            <p>Dear Teachers, your dedication and hard work inspire us every day. We are thrilled to celebrate this special occasion with you. Thank you for everything you do! 🌟</p>
+            <p>Dear Respected Educators, 👩‍🏫👨‍🏫</p>
+            <p>Your dedication and hard work inspire us daily. 🌟 We are honored to celebrate this occasion with you. 🎉 Thank you for your invaluable contributions and for shaping our futures. 🙌</p>
         </section>
 
-        <section class="techie-humor">
-            <h2>Techie Humor:</h2>
-            <p>Why do programmers prefer dark mode? Because light attracts bugs! 💻</p>
-        </section>
+        <hr />
+
+        <footer>
+            <p>Sincerely, <br> <span class="italic-text">BCA - "A" Students 📚, 5th Semester 🏫, Batch 2022-2025 🎓</span></p>
+        </footer>
     </div>
     <script>
         // Countdown Timer
